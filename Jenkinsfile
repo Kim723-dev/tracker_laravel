@@ -10,24 +10,6 @@ pipeline {
             }
         }
 
-        stage('Install Composer Dependencies') {
-            steps {
-                bat 'composer install'
-            }
-        }
-
-        stage('Install NPM Dependencies') {
-            steps {
-                bat 'npm install'
-            }
-        }
-
-        stage('Build Assets') {
-            steps {
-                bat 'npm run build'
-            }
-        }
-
         stage('Run Laravel Commands') {
             steps {
                 bat 'php artisan config:cache'
